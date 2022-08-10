@@ -1,27 +1,27 @@
-.experiences-section {
+.experience-section {
   padding-bottom: 1rem;
 }
 
-.experiences-section .timeline {
+.experience-section .timeline {
   margin-top: 1.5rem !important;
 }
 
-.experiences-section h1 > span{
+.experience-section h1 > span{
   margin-top: -55px;  /* Size of fixed header */
   padding-bottom:55px; 
   display: block; 
 }
 
-.experiences-section ul {
+.experience-section ul {
   padding-left: 1rem;
 }
 
-.experiences-section ul > li {
+.experience-section ul > li {
   margin-left: 0;
   color: #3c4858;
 }
 
-.experiences-section .designation {
+.experience-section .designation {
   font-weight: 600;
 }
 
@@ -121,7 +121,7 @@
 /* Medium devices (tablets, 768px and up) */
 
 @media only screen and (max-width: 768px) {
-  .experiences-section .container {
+  .experience-section .container {
     max-width: 100%;
   }
 }
