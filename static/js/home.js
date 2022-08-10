@@ -38,6 +38,8 @@ var projectCards, publicationCards;
         ityped.init('#ityped', {
           strings: data,
           startDelay: 200,
+          backDelay: 1250,
+          typeSpeed: 50,
           loop: true
         });
       }
