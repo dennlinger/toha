@@ -37,10 +37,11 @@ var projectCards, publicationCards;
 
         ityped.init('#ityped', {
           strings: data,
+          typeSpeed: 75,
+          backSpeed: 50,
           startDelay: 200,
           backDelay: 1250,
-          typeSpeed: 50,
-          loop: true
+          loop: false
         });
       }
     }
