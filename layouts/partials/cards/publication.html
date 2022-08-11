@@ -16,7 +16,11 @@
       </div>
       <div class="authors">
         {{ range $index,$author:= .authors }}
-          <span class="mr-2"><a class="" href="{{.url}}">{{ .name }}</a></span>
+          {{ if in $author.name "Dennis Aumiller" }}
+            <span class="mr-2"><a class="page-author" href="{{.url}}">{{ .name }}</a></span>
+          {{ else }}
+            <span class="mr-2"><a class="other-author" href="{{.url}}">{{ .name }}</a></span>
+          {{ end }}
         {{ end }}
       </div>
     </div>
@@ -31,9 +35,11 @@
             </span>
         {{ end }}
       </div>
-      <div class="details-btn">
-        <a class="btn btn-outline-info ml-1 pl-2 mb-2" href="{{ .paper.url }}" target="_blank" rel="noopener" role="button">{{ i18n "project_details"}}</a>
-      </div>
+      {{ if .paper.url }}
+        <div class="details-btn">
+          <a class="btn btn-outline-info ml-1 pl-2 mb-2" href="{{ .paper.url }}" target="_blank" rel="noopener" role="button">{{ i18n "project_details"}}</a>
+        </div>
+      {{ end }}
     </div>
   </div>
 </div>
