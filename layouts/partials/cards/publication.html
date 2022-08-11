@@ -17,9 +17,17 @@
       <div class="authors">
         {{ range $index,$author:= .authors }}
           {{ if in $author.name "Dennis Aumiller" }}
-            <span class="mr-2"><a class="page-author" href="{{.url}}">{{ .name }}</a></span>
+            {{ if $author.url }}
+              <span class="mr-2"><a class="page-author" href="{{.url}}">{{ .name }}</a></span>
+            {{ else }}
+              <span class="mr-2"><a class="page-author">{{ .name }}</a></span>
+            {{ end }}
           {{ else }}
-            <span class="mr-2"><a class="other-author" href="{{.url}}">{{ .name }}</a></span>
+            {{ if $author.url }}
+              <span class="mr-2"><a class="other-author" href="{{.url}}">{{ .name }}</a></span>
+            {{ else }}
+              <span class="mr-2"><a class="other-author">{{ .name }}</a></span>
+            {{ end }}
           {{ end }}
         {{ end }}
       </div>
