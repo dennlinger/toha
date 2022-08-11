@@ -129,13 +129,40 @@
         {{ end}}
       {{ end }}
     </ul>
+
+    <div class="center-container" style="margin: 20px auto; width: 15%;">
+      <div class="text-container ml-auto" style="margin: auto; width: 85%;">
+        <ul class="social-link d-flex">
+          {{ range $author.socialLinks }}
+          <li>
+            {{ if eq .name "Email" }}
+              <a href="mailto:{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+            {{ else if eq .name (i18n "phone") }}
+              <a href="tel:{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+            {{ else }}
+              <a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+            {{ end }}
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ if $author.resume }}
+        <a href="{{ $author.resume | relURL }}" title='{{ i18n "resume"}}' target="#">
+          <button class="btn btn-dark">{{ i18n "resume"}}</button>
+        </a>
+      {{ end }}
+      {{ range $author.resourceLinks }}
+      <a href="{{ .url | relURL }}" title="{{ .title }}" target="#"
+        ><button class="btn btn-dark">{{ .title }}</button></a>
+      {{ end }}
+    </div>
     {{ if $sections }}
       {{ range first 1 (where (sort $sections "section.weight") ".section.enable" true) }}
         {{ $sectionID := replace (lower .section.name) " " "-"  }}
         {{ if .section.id }}
           {{ $sectionID = .section.id }}
         {{ end }}
-        <a href="#{{ $sectionID }}" aria-label="{{ i18n "read" }} {{ i18n "more" }} - {{ $name }}"><i class="arrow bounce fa fa-chevron-down"></i></a>
+        <a href="#{{ $sectionID }}" aria-label="{{ i18n "read" }} {{ i18n "more" }} - {{ $name }}"><i class="arrow fa fa-chevron-down"></i></a>
       {{ end }}
     {{ end }}
   </div>
