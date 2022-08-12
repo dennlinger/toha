@@ -131,7 +131,7 @@
     </ul>
 
     <div class="center-container" style="margin: 20px auto; width: 15%;">
-      <div class="text-container ml-auto" style="margin: auto; width: 85%;">
+      <div class="text-container ml-auto" style="margin: auto; width: 100%;">
         <ul class="social-link d-flex">
           {{ range $author.socialLinks }}
           <li>
@@ -147,7 +147,7 @@
         </ul>
       </div>
       {{ if $author.resume }}
-        <a href="{{ $author.resume | relURL }}" title='{{ i18n "resume"}}' target="#">
+        <a href="{{ $author.resume | relURL }}" title='{{ i18n "resume"}}' target="#" style="margin-left: -5.5%;">
           <button class="btn btn-dark">{{ i18n "resume"}}</button>
         </a>
       {{ end }}
