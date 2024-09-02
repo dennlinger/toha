@@ -16,7 +16,6 @@
       </div>
       <div class="authors">
         {{ range $index,$author:= .authors }}
-<<<<<<< HEAD
           {{ if in $author.name "Dennis Aumiller" }}
             {{ if $author.url }}
               <span class="mr-2"><a class="page-author" href="{{.url}}">{{ .name }}</a></span>
@@ -30,9 +29,6 @@
               <span class="mr-2"><a class="other-author">{{ .name }}</a></span>
             {{ end }}
           {{ end }}
-=======
-          <span class="me-2"><a class="" href="{{.url}}">{{ .name }}</a></span>
->>>>>>> main
         {{ end }}
       </div>
     </div>
@@ -47,17 +43,11 @@
             </span>
         {{ end }}
       </div>
-<<<<<<< HEAD
       {{ if .paper.url }}
         <div class="details-btn">
           <a class="btn btn-outline-info ml-1 pl-2 mb-2" href="{{ .paper.url }}" target="_blank" rel="noopener" role="button">{{ i18n "project_details"}}</a>
         </div>
       {{ end }}
-=======
-      <div class="details-btn">
-        <a class="btn btn-outline-info ms-1 ps-2 mb-2" href="{{ .paper.url }}" target="_blank" rel="noopener" role="button">{{ i18n "project_details"}}</a>
-      </div>
->>>>>>> main
     </div>
   </div>
 </div>
