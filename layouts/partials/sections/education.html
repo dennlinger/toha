@@ -55,7 +55,35 @@
                             </div>
                             <h6>{{ .name }}</h6>
                             {{ if .grade }}
+<<<<<<< HEAD
+                                <h6><span class="text-muted">{{ .grade.scale }}: </span><span>{{ .grade.achieved }}</span>
+                                    {{ if .grade.outOf }}
+                                        {{ i18n "out_of"}} <span>{{ .grade.outOf }}</span>
+                                    {{ end }}
+                                    {{ if .grade.comment }}
+                                        <span>{{ .grade.comment }}</span>
+                                    {{ end }}    
+                                </h6>
+                            {{ end }}
+                            {{ if .minor }}
+                                <h6><span class="text-muted">Minor: </span><span>{{ .minor }}</span></h6>
+                            {{ end }}
+                            {{ if .focus }}
+                                <h6><span class="text-muted">Focus Area: </span><span>{{ .focus }}</span></h6>
+                            {{ end }}
+                            {{ if .thesis }}
+                                <h6>
+                                    <span class="text-muted">Thesis: </span>
+                                    <span>
+                                        "{{ .thesis.title }}"{{ if .thesis.comment }};{{ end }}
+                                    </span>
+                                    {{ if .thesis.comment }}
+                                        <span>{{ .thesis.comment }}</span>
+                                    {{ end }}
+                                </h6>    
+=======
                                 <h6><span class="text-heading">{{ .grade.scale }}: </span><span>{{ .grade.achieved }}</span> {{ i18n "out_of"}} <span>{{ .grade.outOf }}</span></h6>
+>>>>>>> main
                             {{ end }}
                             {{ if .publications }}
                                 <div class="publications">
@@ -65,7 +93,7 @@
                                             {{ if .url }}
                                                 <li><a href="{{ .url }}" title="{{ .title }}" target="_blank" rel="noopener">{{ .title }}</a></li>
                                             {{ else }}
-                                                <li>{{ .title }}</li>
+                                                <li>{{ .title | markdownify }}</li>
                                             {{ end }}
                                         {{ end }}
                                     </ul>

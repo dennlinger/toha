@@ -3,7 +3,7 @@
   {{ $author = (index site.Data site.Language.Lang).author }}
 {{ end }}
 
-{{ $name:="Jane Doe" }}
+{{ $name:="Hi, I'm Dennis" }}
 {{ if $author.nickname }}
   {{ $name = $author.nickname }}
 {{ else if $author.name }}
@@ -111,10 +111,13 @@
       class="rounded-circle mx-auto d-block img-fluid"
       alt="Author Image"
     />
-    <h1 class="greeting"> {{ $author.greeting }} {{ $name }}</h1>
+    <h1 class="greeting"> {{ $author.greeting }} {{ $name }}!</h1>
     {{ if $author.subtitle }}
       <h2 class="greeting-subtitle">{{ $author.subtitle }}</h2>
     {{ end }}
+    <div class="typing-carousel">
+    I am a researcher interested in 
+    </div>
     <div class="typing-carousel">
       <span id="ityped" class="ityped"></span>
       <span class="ityped-cursor"></span>
@@ -126,13 +129,44 @@
         {{ end}}
       {{ end }}
     </ul>
+
+    <div class="center-container" style="margin: 20px auto; width: 15%;">
+      <div class="text-container ml-auto" style="margin: auto; width: 100%;">
+        <ul class="social-link d-flex">
+          {{ range $author.socialLinks }}
+          <li>
+            {{ if eq .name "Email" }}
+              <a href="mailto:{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+            {{ else if eq .name (i18n "phone") }}
+              <a href="tel:{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+            {{ else }}
+              <a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+            {{ end }}
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ if $author.resume }}
+        <a href="{{ $author.resume | relURL }}" title='{{ i18n "resume"}}' target="#" style="margin-left: -5.5%;">
+          <button class="btn btn-dark">{{ i18n "resume"}}</button>
+        </a>
+      {{ end }}
+      {{ range $author.resourceLinks }}
+      <a href="{{ .url | relURL }}" title="{{ .title }}" target="#"
+        ><button class="btn btn-dark">{{ .title }}</button></a>
+      {{ end }}
+    </div>
     {{ if $sections }}
       {{ range first 1 (where (sort $sections "section.weight") ".section.enable" true) }}
         {{ $sectionID := replace (lower .section.name) " " "-"  }}
         {{ if .section.id }}
           {{ $sectionID = .section.id }}
         {{ end }}
+<<<<<<< HEAD
+        <a href="#{{ $sectionID }}" aria-label="{{ i18n "read" }} {{ i18n "more" }} - {{ $name }}"><i class="arrow fa fa-chevron-down"></i></a>
+=======
         <a href="#{{ $sectionID }}" class="arrow-center" aria-label="{{ i18n "read" }} {{ i18n "more" }} - {{ $name }}"><i class="arrow bounce fa fa-chevron-down"></i></a>
+>>>>>>> main
       {{ end }}
     {{ end }}
   </div>
