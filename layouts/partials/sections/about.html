@@ -25,35 +25,6 @@
       <p class="p-1 text-justify">
         {{ .summary | markdownify }}
       </p>
-<<<<<<< HEAD
-
-=======
-      <div class="text-container ms-auto">
-        <ul class="social-link d-flex">
-          {{ range .socialLinks }}
-          <li>
-            {{ if eq .name "Email" }}
-              <a href="mailto:{{ .url }}" title="{{ .name }}" target="_blank" rel="{{.rel | default "noopener"}}"><i class="{{ .icon }}"></i></a>
-            {{ else if eq .name (i18n "phone") }}
-              <a href="tel:{{ .url }}" title="{{ .name }}" target="_blank" rel="{{.rel | default "noopener"}}"><i class="{{ .icon }}"></i></a>
-            {{ else }}
-              <a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="{{.rel | default "noopener"}}"><i class="{{ .icon }}"></i></a>
-            {{ end }}
-          </li>
-          {{ end }}
-        </ul>
-      </div>
-      {{ if .resume }}
-      <a href="{{ .resume | relURL }}" title="{{ i18n "resume"}}" target="#"
-        ><button class="btn btn-dark">{{ i18n "resume"}}</button></a
-      >
-      {{ end }}
-      {{ range .resourceLinks }}
-      <a href="{{ .url | relURL }}" title="{{ .title }}" target="#"
-        ><button class="btn btn-dark">{{ .title }}</button></a
-      >
-      {{ end }}
->>>>>>> main
     </div>
     <!-- soft skills circular-progressbar -->
     <div class="col-sm-6 pt-5 ps-md-4 ps-sm-3 pt-sm-0">

@@ -17,7 +17,6 @@
    {{ range $index,$exp:= .experience }}
      {{ if eq (mod $index 2) 0 }}
        <div class="row align-items-center  d-flex">
-<<<<<<< HEAD:layouts/partials/sections/experience.html
          {{ partial "sections/experience/vertical-line.html" $index }}
          {{ partial "sections/experience/experience-info.html" $exp }}
        </div>
@@ -25,15 +24,6 @@
        <div class="row align-items-center justify-content-end d-flex">
          {{ partial "sections/experience/experience-info.html" $exp }}
          {{ partial "sections/experience/vertical-line.html" $index }}
-=======
-         {{ partial "sections/experiences/vertical-line.html" $index }}
-         {{ partial "sections/experiences/positions.html" $experience }}
-       </div>
-     {{else}}
-       <div class="row align-items-center justify-content-end d-flex">
-         {{ partial "sections/experiences/positions.html" $experience }}
-         {{ partial "sections/experiences/vertical-line.html" $index }}
->>>>>>> main:layouts/partials/sections/experiences.html
        </div>
      {{ end }}
      {{ if lt $index (sub $totalExperiences 1) }}
