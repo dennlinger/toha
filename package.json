@@ -34,12 +34,11 @@
       "postcss-cli": "project"
     }
   },
-  "dependencies": {},
   "description": "A [Hugo](https://gohugo.io/) theme for a personal portfolio with minimalist design and responsiveness.",
   "devDependencies": {
     "@fontsource/mulish": "4.5.13",
     "@fortawesome/fontawesome-free": "^6.2.0",
-    "autoprefixer": "^10.4.13",
+    "autoprefixer": "^10.4.20",
     "bootstrap": "^5.3.3",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
@@ -61,7 +60,7 @@
     "mermaid": "^9.2.1",
     "plyr": "^3.7.2",
     "popper.js": "^1.16.1",
-    "postcss": "^8.4.31",
+    "postcss": "^8.4.44",
     "postcss-cli": "^8.3.1"
   },
   "homepage": "https://github.com/hugo-toha/toha#readme",
